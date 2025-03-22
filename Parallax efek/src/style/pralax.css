@@ -61,20 +61,25 @@ html {
 
 /* sekat 3rem */
 
-#card {
-  height: 660px;
-}
-
-#card1 {
-  height: 610px;
-}
-
-#card2 {
-  height: 610px;
+#card,
+#card1,
+#card2,
+#card3,
+#card4,
+#card5, 
+#card6,
+#card7 {
+  height: auto;
+  min-height: 50vh;
 }
 
 #card1,
 #card2,
+#card3,
+#card4,
+#card5,
+#card6,
+#card7,
 #card {
   background-color: #e3f2fd !important;
 }
@@ -280,14 +285,14 @@ html {
     padding: 5px;
     position: relative;
     z-index: 1;
-    height: 35em; /* Tetap menggunakan em untuk tinggi */
+    height: auto; /* Tetap menggunakan em untuk tinggi */
     width: 100%; /* Lebar mengikuti parent */
-    max-width: 35em; /* Batasi lebar maksimum */
+    max-width: 100%; /* Batasi lebar maksimum */
     border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     margin: 0 auto; /* Pusatkan container */
   }
 }
@@ -335,9 +340,15 @@ html {
     object-fit: cover; /* Pastikan gambar mengisi area dengan proporsi yang benar */
   }
 
+  #card7,
+  #card6,
+  #card5,
+  #card4,
+  #card3,
   #card2,
   #card1 {
-    height: 1200px;
+    height: auto;
+    min-height: 100vh;
   }
 
   /* Pastikan animasi tetap berfungsi */
