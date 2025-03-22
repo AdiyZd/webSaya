@@ -1,0 +1,356 @@
+:root {
+  --bg: hsl(218, 33%, 18%);
+  --card-size: 260px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* pralax.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+  min-height: 100px !important; /* Ditambahkan min-height */
+}
+
+/* Canvas Styling */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Canvas di belakang elemen lain */
+}
+
+/* Navbar Styling */
+.navbar {
+  z-index: 1000; /* Navbar di atas canvas */
+  background-color: #e3f2fd; /* Warna navbar */
+}
+
+#nb {
+  font-family: "Pacifico", cursive; /* Ditambahkan font-family untuk navbar */
+}
+
+#pralax h1,
+#pralax p {
+  font-family: "Righteous", cursive; /* Ditambahkan font-family untuk teks di dalam #pralax */
+}
+
+#pralax {
+  margin-top: 40px; /* Jarak antara row di atasnya dan id="pralax" */
+  padding: 20px; /* Padding di dalam id="pralax" */
+}
+
+/* Content Styling */
+.content {
+  position: relative;
+  z-index: 1; /* Konten di atas canvas */
+  padding-top: 100px; /* Memberi ruang untuk navbar */
+  color: #f6f0f0 !important; /* Warna teks diubah */
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+}
+
+/* sekat 3rem */
+
+#card {
+  height: 660px;
+}
+
+#card1 {
+  height: 610px;
+}
+
+#card2 {
+  height: 610px;
+}
+
+#card1,
+#card2,
+#card {
+  background-color: #e3f2fd !important;
+}
+
+/* Card Styling */
+.slide-container {
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+  margin: 0 auto; /* Pusatkan slide container */
+}
+
+.slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.card {
+  border-radius: 25px;
+  background-color: #ffffff;
+}
+
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content {
+  row-gap: 5px;
+  position: relative;
+  padding: 25px 0;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070f4;
+  border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070f4;
+}
+
+.overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: #ffffff;
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 3px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4070f4;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.description {
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 16px;
+  background-color: #4070f4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #265df2;
+}
+
+.swiper-navBtn {
+  color: #6e93f7 !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-navBtn:hover {
+  color: #4070f4 !important;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 40px !important;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+}
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #6e93f7 !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #4070f4 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content {
+    margin: 0 10px;
+  }
+  .swiper-navBtn {
+    display: none !important;
+  }
+}
+/* end card */
+
+/* id card1 */
+.rainbow-glow1 {
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, filter 0.5s ease-in-out;
+  display: inline-block;
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  &:before {
+    /* content: "";
+    display: block;
+    position: absolute;
+    width: 200%;
+    right: -50%;
+    bottom: -50%;
+    top: -50%;
+    background-position: center center;
+    background-image: conic-gradient(
+      from 0 at 50% 50%,
+      transparent 50%,
+      #0d6efd,
+      #0d6efd
+    ); */
+    animation: rainbowGlowRotate 4s linear infinite;
+    filter: blur(250px) brightness(1.2);
+  }
+  .card-satu {
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 200%;
+      right: -50%;
+      bottom: -50%;
+      top: -50%;
+      background-position: center center;
+      background-image: conic-gradient(
+        from 0 at 50% 50%,
+        transparent 50%,
+        #0d6efd,
+        #0d6efd  
+      );
+      animation: rainbowRotate 8s linear infinite;
+      filter: blur(5px);
+      border-radius: 100%;
+    }
+  }
+  .content1 {
+    font-size: 16px; /* Pastikan font-size diatur */
+    padding: 5px;
+    position: relative;
+    z-index: 1;
+    height: 35em; /* Tetap menggunakan em untuk tinggi */
+    width: 100%; /* Lebar mengikuti parent */
+    max-width: 35em; /* Batasi lebar maksimum */
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto; /* Pusatkan container */
+  }
+}
+
+@keyframes rainbowRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbowGlowRotate {
+  0% {
+    transform: rotate(0deg) scale(0.3);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.5);
+  }
+}
+
+.img-satu {
+  height: 100%; /* Tinggi mengikuti container */
+  width: 100%; /* Lebar mengikuti container */
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.7s ease-in-out;
+}
+
+/* Media Query untuk Layar Kecil (Mobile) */
+@media (max-width: 768px) {
+  .content1 {
+    height: 20em; /* Sesuaikan tinggi untuk mobile */
+    width: 90%; /* Lebar 90% dari parent */
+    max-width: 25em; /* Batasi lebar maksimum */
+  }
+
+  .img-satu {
+    height: 100%; /* Tinggi mengikuti container */
+    width: 100%; /* Lebar mengikuti container */
+    object-fit: cover; /* Pastikan gambar mengisi area dengan proporsi yang benar */
+  }
+
+  #card2,
+  #card1 {
+    height: 1200px;
+  }
+
+  /* Pastikan animasi tetap berfungsi */
+  .rainbow-glow1::before {
+    animation: rainbowGlowRotate 4s linear infinite; /* Animasi glow */
+  }
+
+  .card-satu::before {
+    animation: rainbowRotate 8s linear infinite; /* Animasi border */
+  }
+}
+/* end card1 */
+
+/* footer */
+
+/* end footer */
