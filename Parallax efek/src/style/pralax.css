@@ -68,7 +68,9 @@ html {
 #card4,
 #card5, 
 #card6,
-#card7 {
+#card7,
+#card9,
+#card8 {
   height: auto;
   min-height: 50vh;
 }
@@ -80,6 +82,8 @@ html {
 #card5,
 #card6,
 #card7,
+#card8,
+#card9,
 #card {
   background-color: #e3f2fd !important;
 }
@@ -340,6 +344,8 @@ html {
     object-fit: cover; /* Pastikan gambar mengisi area dengan proporsi yang benar */
   }
 
+  #card9,
+  #card8,
   #card7,
   #card6,
   #card5,
@@ -363,5 +369,28 @@ html {
 /* end card1 */
 
 /* footer */
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+  border-top: 1px solid #eaeaea;
+}
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #007bff;
+}
+.social-icons a {
+  color: #555;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #007bff;
+}
 
 /* end footer */
